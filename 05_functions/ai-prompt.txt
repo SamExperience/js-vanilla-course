@@ -29,6 +29,8 @@ LESSON 20 — parameters in depth:
   "no scores" case when called with a title only
 
 LESSON 21 — functions as values:
+- warm-up: `half` as an arrow function, and `applyTo(value, fn)` calling it — passed by
+  name first, then written inline
 - `square` as an arrow function, and `applyTwice(value, fn)` taking it as a callback
 - `greeterFor(greeting)` returning a function
 - mini challenge: `makeCounter()` returning a counting function, and explaining where
