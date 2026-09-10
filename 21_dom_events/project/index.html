@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LESSON 45 — DOM events</title>
+  </head>
+  <body>
+    <main>
+      <h1>LESSON 45 — DOM events</h1>
+
+      <section class="panel">
+        <h2>Lesson demo</h2>
+        <p>Produced by <code>src/lessons/lesson-45-dom-events.js</code>. Open the console too.</p>
+
+        <button id="demo-click">Click me</button>
+        <input id="demo-input" type="text" placeholder="type something" />
+        <p>You typed: <span id="demo-echo">—</span></p>
+
+        <p>Event delegation — one listener for the whole list:</p>
+        <ul id="demo-list">
+          <li>Apple</li>
+          <li>Banana</li>
+          <li>Orange</li>
+        </ul>
+        <p>Last clicked: <span id="demo-target">—</span></p>
+
+        <a id="demo-link" href="https://example.com">A link with preventDefault</a>
+      </section>
+
+      <section class="panel">
+        <h2>Your exercise — theme toggle</h2>
+        <p>Make this work by editing <code>src/exercise/exercise.js</code>.</p>
+
+        <button id="theme-toggle">Switch to dark</button>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
