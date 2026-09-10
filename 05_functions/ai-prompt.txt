@@ -25,7 +25,8 @@ Mini challenge — a function `isAdult`:
 LESSON 20 — parameters in depth:
 - `makeTag(text, tag = "p")` using a default parameter
 - `average(...numbers)` using a rest parameter, returning 0 for no arguments
-- mini challenge: `buildUrl(base, ...parts)` joining a URL with single slashes
+- mini challenge: `report(title, ...scores)` returning a summary line, and a
+  "no scores" case when called with a title only
 
 LESSON 21 — functions as values:
 - `square` as an arrow function, and `applyTwice(value, fn)` taking it as a callback
