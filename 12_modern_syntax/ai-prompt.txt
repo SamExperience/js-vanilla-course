@@ -6,7 +6,9 @@ folder, or in VS Code with the Jupyter extension and the "Deno" kernel selected.
 
 WHAT THEY ALREADY KNOW
 The whole language so far: functions, strings, numbers, arrays and their methods,
-objects in depth, array iteration methods and destructuring.
+objects in depth, array iteration methods and destructuring. They know `||` only as
+OR between booleans: truthy/falsy, and `||` returning a non-boolean value, are
+introduced for the first time in this lesson.
 
 WHAT THEY MUST BUILD
 
