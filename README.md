@@ -59,7 +59,7 @@ To open the notebooks:
 | 07 | `07_numbers_math` | LESSON 24 — Number/parseInt, NaN, toFixed, rounding, Math |
 | 08 | `08_arrays` | LESSON 25-26 — indexes, push/pop/shift/unshift, sort, slice/splice, concat/join |
 | 09 | `09_objects` | LESSON 27-28 — dot vs bracket, nesting, Object.keys/values/entries, spread, getters |
-| 10 | `10_array_methods` | LESSON 29-30 — forEach, map, filter, find, reduce, some, every, flat, chaining |
+| 10 | `10_array_methods` | LESSON 29-30 — forEach, map, filter, find, reduce, some, every, findLast, flat, chaining, sorting by field, Object.groupBy |
 | 11 | `11_destructuring_spread` | LESSON 31 — destructuring, rest, spread, copy by reference |
 | 12 | `12_modern_syntax` | LESSON 32 — optional chaining `?.`, nullish `??`, logical assignment |
 | 13 | `13_classes` | LESSON 33-34 — class, constructor, this, static, extends, super, prototypes |
