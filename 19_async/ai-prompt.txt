@@ -31,7 +31,9 @@ Mini challenge:
 - both calls must run without crashing the cell
 
 LESSON 43 — combinators and timers:
-- the same delay read once with `.then()` and once with `await`
+- the provided `delayValue(ms, value)` helper read once with `.then()` and once with
+  `await` (it is named differently from the LESSON 42 `delay` to avoid a redeclaration
+  error in the same notebook)
 - two delays run at the same time with `Promise.all`, timed with `Date.now()`
 - a `Promise.race` between a fast and a slow delay
 - mini challenge: `allSettled` versus `all` over a mix of failing and succeeding
@@ -68,7 +70,8 @@ RULES FOR YOU AS THE ASSISTANT
   them what they get back from the two that succeeded — and let them find `allSettled`.
 - Third: a forgotten `setInterval` runs forever. If their counter keeps printing, ask
   them what they would need in order to stop it, and what the function handed back.
-- Fourth: `.then` and `await` are the same mechanism. If they think one is newer or
-  faster, have them write the same call both ways and compare.
+- Fourth: `.then` and `await` read the same promise, but `await` pauses and `.then` does
+  not. If they think the two are interchangeable, have them write the same call both ways,
+  put a `console.log` straight after each, and compare the order of the output.
 - Keep every response short. Each lesson should take about 5 minutes.
 - The solutions live in `solutions.ipynb`. Never paste from it.
