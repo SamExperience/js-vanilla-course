@@ -5,6 +5,10 @@
 }
 
 body {
+  /* An explicit light baseline: the exercise's toggle adds .dark on top of it,
+     so the page starts light whatever the operating system prefers. */
+  background: #ffffff;
+  color: #16181d;
   margin: 0;
   padding: 2rem 1rem;
   display: flex;
@@ -53,7 +57,7 @@ code {
   font-size: 0.9em;
 }
 
-/* Used by the lesson demo */
+/* Used by the lesson demo and by the exercise's list */
 .highlight {
   font-weight: 700;
   text-decoration: underline;
@@ -74,6 +78,7 @@ input {
   color: inherit;
 }
 
-#demo-list li {
+#demo-list li,
+#fav-list li {
   cursor: pointer;
 }

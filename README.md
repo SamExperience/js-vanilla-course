@@ -75,7 +75,7 @@ To open the notebooks:
 | # | Topic | Lesson | Exercise | Mini-project |
 |---|---|---|---|---|
 | 20 | `20_dom_basics` | LESSON 44 — querySelector, textContent, classList, createElement | click counter | **`js-fizzbuzz`** |
-| 21 | `21_dom_events` | LESSON 45 — addEventListener, event.target, closest, delegation, keys | theme toggle | — |
+| 21 | `21_dom_events` | LESSON 45 — addEventListener, event.target, closest, delegation, keys | theme toggle + delegation | — |
 | 22 | `22_dom_forms_lists` | LESSON 46-47 — submit, validation, data loop → render, template | to-do list | **`js-list-filter`** |
 | 23 | `23_fetch_api` | LESSON 48 — fetch, loading/error, separate services, localStorage | list from API | **`js-market-dashboard`** |
 | 24 | `24_final_project` | — | — | **`js-user-directory`** |
