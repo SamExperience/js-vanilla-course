@@ -59,9 +59,12 @@ export function runExercise() {
   // write here
 
   // ---- STEP 6 — test the failure --------------------------------------
-  // Temporarily break the URL in your service file and click again.
+  // In your service file, change the PATH to something that doesn't exist
+  // ("/posts" -> "/postzzz") and click again. Keep it a valid URL: you want a
+  // real 404 answer, which is what response.ok is there to catch.
   // If nothing visible changes, your error path isn't wired up.
-  // Check: you should see the error message, not a blank list.
+  // Check: you should see "Could not load: Request failed with status 404",
+  // not a blank list.
 
-  // break the URL, click, then put it back
+  // change the path, click, then put it back
 }
