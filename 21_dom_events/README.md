@@ -1,7 +1,7 @@
 # 21 — DOM events (LESSON 45)
 
-How the page reacts: listeners, the event object, and one listener that serves many
-elements.
+How the page reacts: listeners, the event object, one listener that serves many
+elements, and the keyboard.
 
 ## Path
 
@@ -13,11 +13,15 @@ mistake of this topic: passing a function versus calling it.
 `src/lessons/lesson-45-dom-events.js` and click around the page while watching the
 console. Try the list (delegation) and the link (`preventDefault`).
 
-**3. Do the exercise** — `src/exercise/exercise.js` holds **4 numbered STEPs**, each
+**3. Do the exercise** — `src/exercise/exercise.js` holds **7 numbered STEPs**, each
 with a `// Check:` line. One STEP at a time, checking the browser after each.
+STEPs 1-4 build the theme toggle, STEPs 5-6 add delegation with `closest()`, and
+STEP 7 clears the highlights from the keyboard.
 
-**Done when:** clicking flips the colours, and the label alternates between
-"Switch to dark" and "Switch to light" — always naming the next action.
+**Done when:** clicking flips the colours, the label alternates between
+"Switch to dark" and "Switch to light" — always naming the next action —
+clicking any list item highlights it, including the row whose text sits inside a
+`<span>`, and pressing Escape clears every highlight.
 
 ## If you get stuck
 
@@ -34,5 +38,5 @@ project/src/
   exercise/solution.js            solution
 ```
 
-Delegation in the demo is not decoration: you need it in LESSON 46, where the `<li>`
-elements are created *after* the listener is already in place.
+Delegation is not decoration: you need it in LESSON 46, where the `<li>` elements
+are created *after* the listener is already in place.
