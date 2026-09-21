@@ -1,4 +1,4 @@
-# 22 — Forms & dynamic lists (LESSON 46)
+# 22 — Forms & dynamic lists (LESSON 46-47)
 
 The loop that runs every real interface: **data → render → an event changes the data →
 render again**. You never patch ten parts of the page by hand; you change the data and
@@ -6,8 +6,10 @@ redraw. This is how React thinks, without React.
 
 ## Path
 
-**1. Read the lesson** — `forms_lists.ipynb`. A runnable cell shows the data → render
-loop working with no browser at all.
+**1. Read the lesson** — `forms_lists.ipynb`. Two lessons: **LESSON 46**, the data →
+render loop, with a runnable cell that shows it working with no browser at all; and
+**LESSON 47**, on adding rows without rebuilding the list (`insertAdjacentHTML`,
+`<template>`). LESSON 47 is background — the exercise covers LESSON 46.
 
 **2. Run the project, then read the demo** — `npm install` (first time), then
 `npm run dev` inside `project/`. Open `src/lessons/lesson-46-forms-lists.js`: it builds
@@ -29,7 +31,7 @@ Paste `ai-prompt.txt` into a new session with an AI assistant.
 ## Structure
 
 ```
-forms_lists.ipynb                 the lesson (theory)
+forms_lists.ipynb                 the lessons (theory, 46 and 47)
 mini-project.md                   your second public repo — read it after the exercise
 review-prompt.txt                 prompt to have your finished repo reviewed
 project/src/
