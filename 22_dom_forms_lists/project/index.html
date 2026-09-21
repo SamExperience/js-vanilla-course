@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LESSON 46 — Forms & lists</title>
+    <title>LESSON 46-47 — Forms & lists</title>
   </head>
   <body>
     <main>
-      <h1>LESSON 46 — Forms &amp; dynamic lists</h1>
+      <h1>LESSON 46-47 — Forms &amp; dynamic lists</h1>
 
       <section class="panel">
         <h2>Lesson demo</h2>
@@ -31,6 +31,12 @@
           <button type="submit">Add</button>
         </form>
         <p class="error" id="todo-error"></p>
+
+        <!-- The shape of one row, used from STEP 7 on. The browser parses
+             this but does not display it. -->
+        <template id="todo-row">
+          <li class="task"><span class="label"></span></li>
+        </template>
 
         <ul id="todo-list"></ul>
       </section>
