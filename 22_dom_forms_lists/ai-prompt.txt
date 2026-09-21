@@ -19,9 +19,12 @@ FILES
 - `src/exercise/solution.js` — the reference solution. Never paste from it.
 
 SCOPE
-The exercise is LESSON 46 only. LESSON 47 (insertAdjacentHTML, <template>, cloneNode)
-is theory in the notebook and has no exercise: do not ask them to use it, and do not
-treat rebuilding the list as a mistake. Rebuilding is the correct approach here.
+The exercise has two parts. STEPs 1-6 are LESSON 46: the data -> render loop, with rows
+built by createElement. STEPs 7-8 are LESSON 47: the same rows built from a <template>
+with cloneNode(true), which puts a <span> inside each row and breaks the tagName check
+from STEP 5, so removal moves to closest("li").
+Rebuilding the whole list stays correct throughout — never treat it as a mistake.
+insertAdjacentHTML is theory only: do not ask them to use it.
 
 WHAT THEY MUST BUILD
 
@@ -31,6 +34,10 @@ A to-do list, following the same three-step shape as the demo:
 - on submit: preventDefault, read and trim the input, refuse an empty value with a
   message in #todo-error, otherwise push the task, clear the input, re-render
 - clicking a task removes it, using ONE delegated listener on the <ul>
+Then, in STEPs 7-8:
+- makeRow(todo, index) clones #todo-row with cloneNode(true), fills the .label <span>
+  and sets dataset.index on the <li>
+- removal switches from the tagName check to closest("li")
 
 WHY THIS LESSON MATTERS
 The data → render loop is how React thinks. If they internalise it here, in plain

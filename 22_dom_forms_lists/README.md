@@ -9,19 +9,22 @@ redraw. This is how React thinks, without React.
 **1. Read the lesson** — `forms_lists.ipynb`. Two lessons: **LESSON 46**, the data →
 render loop, with a runnable cell that shows it working with no browser at all; and
 **LESSON 47**, on adding rows without rebuilding the list (`insertAdjacentHTML`,
-`<template>`). LESSON 47 is background — the exercise covers LESSON 46.
+`<template>`, `cloneNode`).
 
 **2. Run the project, then read the demo** — `npm install` (first time), then
 `npm run dev` inside `project/`. Open `src/lessons/lesson-46-forms-lists.js`: it builds
 the *colours* box with exactly that loop. Add a colour, try a duplicate, click one to
 remove it.
 
-**3. Do the exercise** — `src/exercise/exercise.js` holds **6 numbered STEPs**, each
-with a `// Check:` line telling you how to verify it before moving on.
+**3. Do the exercise** — `src/exercise/exercise.js` holds **8 numbered STEPs**, each
+with a `// Check:` line telling you how to verify it before moving on. STEPs 1-6 build
+the to-do list (LESSON 46). STEPs 7-8 rebuild its rows from a `<template>` (LESSON 47) —
+which puts a `<span>` inside each row and breaks the way STEP 5 found the clicked item,
+so STEP 8 switches to `closest()`.
 
 **Done when:** you can add several tasks, an empty submit shows a message instead of
 adding anything, and clicking any task removes the right one — still correct after a
-few adds and removes.
+few adds and removes, and still correct when you click the task's text.
 
 ## If you get stuck
 
