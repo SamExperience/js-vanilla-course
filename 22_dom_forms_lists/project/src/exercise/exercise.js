@@ -31,56 +31,110 @@
 */
 
 export function runExercise() {
-  // ---- STEP 1 — the elements and the data -----------------------------
-  // Select the four elements you need: form, input, list (<ul>), error (<p>).
   // (STEP 7 adds a fifth — come back for it then.)
-  // Also create the array that will hold the tasks — declare it here, inside
-  // this function, so everything below can reach it.
-  // Check: console.log the four elements. If any is null, the selector is wrong.
 
   // write here
+  // ---- STEP 1 — the elements and the data -----------------------------
+  // Select the four elements you need: form, input, list (<ul>), error (<p>).
+  const form = document.querySelector("#todo-form");
+  const input = document.querySelector("#todo-input");
+  const list = document.querySelector("#todo-list");
+  const template = document.querySelector("#todo-row");
+  const errElem = document.querySelector("#todo-error");
+  // Also create the array that will hold the tasks — declare it here, inside
+  // this function, so everything below can reach it.
+  const arrayList = ["test"];
+
+  // Check: console.log the four elements. If any is null, the selector is wrong.
+  console.log(">>>CHECK ELEMENTS ...print below: ");
+  console.log(form ? "🟢 Form ok!" : "🔴Form error");
+  console.log(input ? "🟢 input ok!" : "🔴input error");
+  console.log(list ? "🟢 list ok!" : "🔴list error");
+  console.log(template ? "🟢 template ok!" : "🔴template error");
+  console.log(errElem ? "🟢 errElem ok!" : "🔴errElem error");
+  console.log("Array list-> ", arrayList);
+
+  console.log(" ");
 
   // ---- STEP 2 — the render function -----------------------------------
-  // Write render(): empty the <ul>, then create one <li> per task.
-  // Give each <li> its textContent and its dataset.index.
   // Check: temporarily start the array with ["test"] and call render()
   //        at the end of this function. You should see it on the page.
 
   // write here
+  // Write render(): empty the <ul>, then create one <li> per task.
+  function render() {
+    // 1. Select elements/create array
+    list.innerHTML = "";
 
+    // 2. render()
+    arrayList.forEach((text, index) => {
+      /* 
+      const copy = template.content.cloneNode(true);
+      const li = copy.querySelector("li");
+      const label = copy.querySelector(".label");
+      
+
+      // 7. Rebuild row from <template> with cloneNode(true)
+      label.textContent = text;
+
+      // Give each <li> its textContent and its dataset.index.
+      li.dataset.index = index;
+      
+      list.appendChild(copy);
+      */
+      list.appendChild(makeRow(text, index));
+    });
+  }
   // ---- STEP 3 — handle the submit -------------------------------------
+
+  // write here
   // Listen for "submit" on the FORM (not "click" on the button).
-  // First line inside: event.preventDefault() — without it the page reloads.
-  // Then: read input.value.trim().
-  // Check: console.log the value and confirm the page does NOT reload.
+  form.addEventListener("submit", (event) => {
+    // First line inside: event.preventDefault() — without it the page reloads.
+    event.preventDefault();
+    // Then: read input.value.trim().
+    const value = input.value.trim();
 
-  // write here
+    // ---- STEP 4 — reject an empty task ----------------------------------
 
-  // ---- STEP 4 — reject an empty task ----------------------------------
-  // Still inside the submit listener:
-  //   - if the value is empty: write a message into the error <p> and stop (return)
-  //   - otherwise: clear the error, push the task, empty the input, call render()
-  // Check: add two tasks, then try submitting an empty one.
+    // If the value is empty, show an error and stop.
+    if (!value) {
+      errElem.textContent = "Insert a valid text!";
+      return;
+    }
 
-  // write here
+    // Otherwise: clear error, add task, clear input, render.
+    errElem.textContent = "";
+    arrayList.push(value);
+    input.value = "";
+    render();
+  });
 
   // ---- STEP 5 — remove by delegation ----------------------------------
-  // Removal, by delegation: ONE listener on the <ul>.
-  // Ignore clicks that aren't on an <li> — use the same check as the demo,
-  // event.target.tagName !== "LI". (LESSON 45 also gave you closest(); use
-  // the tagName check here anyway, because STEP 8 comes back to it.)
-  // Read the index from event.target.dataset.index (it's a string — wrap it
-  // in Number()), remove that item with splice(index, 1), then render().
-  // Check: add three tasks and remove the middle one.
-
+  //NEW LISTENER IN STEP 8
   // write here
-
+  /* 
+  list.addEventListener("click", (event) => {
+    // Ignore clicks that aren't on an <li> — use the same check as the demo,
+    // event.target.tagName !== "LI". (LESSON 45 also gave you closest(); use
+    // Removal, by delegation: ONE listener on the <ul>.
+    // the tagName check here anyway, because STEP 8 comes back to it.)
+    if (event.target.tagName !== "LI") return;
+    // Read the index from event.target.dataset.index (it's a string — wrap it
+    // in Number()), remove that item with splice(index, 1), then render().
+    const index = Number(event.target.dataset.index);
+    arrayList.splice(index, 1);
+    // Check: add three tasks and remove the middle one.
+    render();
+  });
+ */
   // ---- STEP 6 — first render ------------------------------------------
   // Call render() once here, so the page is correct on first load.
   // Check: reload the page. An empty list is correct — what matters is that
   //        no error appears in the console.
 
   // write here
+  render();
 
   // ======================================================================
   //  Everything above is LESSON 46 and must work before you go on.
@@ -102,7 +156,13 @@ export function runExercise() {
   //        cloned an empty box, so the <li> and the <span> aren't in it.
 
   // write here
+  function makeRow(todo, index) {
+    const row = template.content.cloneNode(true);
+    row.querySelector(".label").textContent = todo;
+    row.querySelector("li").dataset.index = index;
 
+    return row;
+  }
   // ---- STEP 8 — find the row that was clicked -------------------------
   // Add a task and click directly on its TEXT: nothing happens any more.
   // The click now lands on the <span>, so the tagName check from STEP 5
@@ -116,4 +176,12 @@ export function runExercise() {
   //        list's left margin, must do nothing.
 
   // write here
+  list.addEventListener("click", (event) => {
+    const li = event.target.closest("li");
+    if (!li) return;
+
+    const index = Number(li.dataset.index);
+    arrayList.splice(index, 1);
+    render();
+  });
 }
