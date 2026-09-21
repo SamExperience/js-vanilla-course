@@ -21,6 +21,21 @@ export function runExercise() {
   // Check: console.log them. If you see null, your selector is wrong.
 
   // write here
+  const count = document.querySelector("#count");
+  if (!count) {
+    console.log(">>>Selector is null or wrong!");
+  } else {
+    console.log("count>>>: ", count);
+    console.log("count inside >>>: ", count.textContent);
+  }
+
+  const increment = document.querySelector("#increment");
+  if (!increment) {
+    console.log(">>>Selector is null or wrong!");
+  } else {
+    console.log("increment>>>: ", increment);
+    console.log("increment inside >>>: ", increment.textContent);
+  }
 
   // ---- STEP 2 — the count variable ------------------------------------
   // Create a variable holding the current count, starting at 0.
@@ -29,6 +44,10 @@ export function runExercise() {
   // Check: nothing visible yet. That's expected.
 
   // write here
+  let counter = 0;
+  console.log("Counter>>>: ", counter);
+  counter = parseInt(count.textContent);
+  console.log("Counter=countContent>>>: ", counter);
 
   // ---- STEP 3 — react to the click ------------------------------------
   // Listen for clicks on the button. On each click: add 1 to the count and
@@ -38,10 +57,21 @@ export function runExercise() {
 
   // write here
 
-  // ---- STEP 4 — turn it red at 10 -------------------------------------
-  // When the count reaches 10, turn the <h3> text red.
-  //   element.style.color = "red";
-  // Check: click ten times.
+  increment.addEventListener("click", () => {
+    counter++;
+    console.log("Counter>>>", counter);
+    count.textContent = counter;
+    console.log("Count>>>", count);
 
-  // write here
+    // ---- STEP 4 — turn it red at 10 -------------------------------------
+    // When the count reaches 10, turn the <h3> text red.
+    //   element.style.color = "red";
+    // Check: click ten times.
+
+    // write here
+    if (counter === 10) {
+      count.style.color = "red";
+      console.log(">>>RED);");
+    }
+  });
 }
