@@ -19,8 +19,8 @@ page and has none. Click both demo buttons, the broken one included.
 **3. Do the exercise** — `src/exercise/exercise.js` holds **6 numbered STEPs**, each
 with a `// Check:` line. STEP 1 has you write your own service file.
 
-**Done when:** clicking shows "Loading…", then 10 titles appear — and breaking the URL
-on purpose shows an error message instead of a blank page.
+**Done when:** clicking shows "Loading…", then 10 titles appear — and pointing the
+service at a path that doesn't exist shows an error message instead of a blank page.
 
 ## The two traps
 
@@ -41,6 +41,7 @@ review-prompt.txt                 prompt to have your finished repo reviewed
 project/src/
   services/users-service.js       talks to the network, never touches the DOM
   services/posts-service.js       ← you create this one in STEP 1
+  services/posts-solution-service.js  the reference one — spoiler
   lessons/lesson-48-fetch.js      live demo, knows no URLs
   exercise/exercise.js            ← you write here
   exercise/solution.js            solution

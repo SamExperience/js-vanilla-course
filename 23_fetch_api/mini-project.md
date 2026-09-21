@@ -27,7 +27,8 @@ Commit pass 1 before starting pass 2. Those commits are the story this repo tell
 
 - [ ] List of assets, each row showing symbol, name, image and current price
 - [ ] Only assets with `total_volume` above 1,000,000 are listed
-- [ ] The header shows `shown/total`, e.g. `28/100`
+- [ ] The header shows `shown/total`, e.g. `91/100` — the exact numbers depend on
+      the market that day, so read yours off the data rather than matching mine
 - [ ] A search field filters the list by symbol as you type
 - [ ] Clicking a row opens a detail view with more fields than the list shows, and a
       button back to the list — with the search still applied
@@ -64,9 +65,11 @@ does what it says, not when you have used everything you know.
 ## If you get stuck
 
 Reread `23_fetch_api` (`response.ok`, the loading/error states, the `services/` split)
-and `21_dom_events` (delegation). If nothing arrives, open the Network tab: the public
-CoinGecko API rate-limits, and reloading too fast returns 429. That is not your bug,
-but handling it visibly is your job.
+and `21_dom_events` (delegation). If nothing arrives, open the Network tab and look at
+the status: without an API key CoinGecko allows only about 5-15 calls a minute, shared
+with everyone on your IP address and varying with how busy it is. A 429 is therefore
+normal while you are developing and reloading often — it is not your bug. Showing it
+to the user instead of a blank page is, and the `catch` you already know covers it.
 
 ## If you want to push further
 
